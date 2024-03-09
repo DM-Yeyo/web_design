@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+		}
+
+		.gallery {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: 0 auto;
+			max-width: 1200px;
+		}
+
+		.gallery figure {
+			margin: 10px;
+			width: 300px;
+		}
+
+		.gallery img {
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.gallery img:hover {
+			transform: scale(1.1);
+		}
+
+		.gallery figcaption {
+			font-size: 0.8em;
+			text-align: center;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="gallery">
+		<figure>
+			<img src="image1.jpg" alt="Image 1">
+			<figcaption>Descriptive text for Image 1</figcaption>
+		</figure>
+		<figure>
+			<img src="image2.jpg" alt="Image 2">
+			<figcaption>Descriptive text for Image 2</figcaption>
+		</figure>
+		<figure>
+			<img src="image3.jpg" alt="Image 3">
+			<figcaption>Descriptive text for Image 3</figcaption>
+		</figure>
+		<figure>
+			<img src="image4.jpg" alt="Image 4">
+			<figcaption>Descriptive text for Image 4</figcaption>
+		</figure>
+		<figure>
+			<img src="image5.jpg" alt="Image 5">
+			<figcaption>Descriptive text for Image 5</figcaption>
+		</figure>
+		<figure>
+			<img src="image6.jpg" alt="Image 6">
+			<figcaption>Descriptive text for Image 6</figcaption>
+		</figure>
+	</div>
+</body>
+</html>
