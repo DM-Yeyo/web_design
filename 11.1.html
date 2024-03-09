@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Podcast</title>
+</head>
+<body>
+    <h1>Web Design Podcast</h1>
+    <a href="podcast.mp3">Podcast Episode 1 (MP3)</a><br>
+    <a href="transcript.txt">Podcast Transcript</a>
+
+    <script>
+        const audioLink = document.querySelector('a[href$=".mp3"]');
+        const transcriptLink = document.querySelector('a[href$=".txt"]');
+
+        audioLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const audio = new Audio(this.href);
+            audio.play();
+        });
+
+        transcriptLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            fetch(this.href)
+                .then(response => response.text())
+                .then(text => {
+                    const transcriptWindow = window.open('', '_blank');
+                    transcriptWindow.document.open();
+                    transcriptWindow.document.write('<pre>' + text + '</pre>');
+                    transcriptWindow.document.close();
+                })
+                .catch(error => console.error('Error fetching transcript:', error));
+        });
+    </script>
+</body>
+</html>
